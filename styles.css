@@ -41,6 +41,8 @@ body::before {
   pointer-events: none;
 }
 
+body::before { display: none; }
+
 body::after {
   content: "";
   position: fixed;
@@ -181,6 +183,86 @@ main { padding-top: 74px; }
   position: relative;
   z-index: 1;
 }
+
+.kotoba-column {
+  position: absolute;
+  top: clamp(90px, 12vw, 150px);
+  right: clamp(24px, 8vw, 132px);
+  z-index: 0;
+  display: grid;
+  justify-items: center;
+  width: clamp(180px, 21vw, 360px);
+  color: color-mix(in srgb, var(--season-ink, var(--gold)) 72%, white);
+  opacity: .42;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.kotoba-column span {
+  display: block;
+  height: clamp(72px, 8.7vw, 150px);
+  font-size: clamp(8rem, 16vw, 20rem);
+  font-weight: 900;
+  line-height: .46;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  transform: skewX(-6deg);
+}
+
+.kotoba-column span:nth-child(1) { transform: translateX(-18%) skewX(-6deg); }
+.kotoba-column span:nth-child(2) { transform: translateX(10%) skewX(-6deg); }
+.kotoba-column span:nth-child(3) { transform: translateX(-8%) skewX(-6deg); }
+.kotoba-column span:nth-child(4) { transform: translateX(12%) skewX(-6deg); }
+.kotoba-column span:nth-child(5) { transform: translateX(-4%) skewX(-6deg); }
+.kotoba-column span:nth-child(6) { transform: translateX(7%) skewX(-6deg); }
+
+.footprints {
+  position: absolute;
+  top: clamp(150px, 18vw, 240px);
+  right: clamp(230px, 30vw, 520px);
+  z-index: 0;
+  width: 170px;
+  height: min(58vw, 600px);
+  pointer-events: none;
+}
+
+.footprints i {
+  position: absolute;
+  display: block;
+  width: 42px;
+  height: 58px;
+  opacity: .38;
+  transform: rotate(var(--step-rotate, -18deg));
+}
+
+.footprints i::before,
+.footprints i::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 24px;
+  background: color-mix(in srgb, var(--season-ink, var(--gold)) 72%, white);
+  border-radius: 999px 999px 60% 60%;
+}
+
+.footprints i::before {
+  left: 5px;
+  top: 3px;
+  transform: rotate(-8deg);
+}
+
+.footprints i::after {
+  right: 5px;
+  bottom: 4px;
+  transform: rotate(10deg);
+}
+
+.footprints i:nth-child(1) { left: 62px; top: 0; --step-rotate: -22deg; }
+.footprints i:nth-child(2) { left: 30px; top: 86px; --step-rotate: 16deg; }
+.footprints i:nth-child(3) { left: 78px; top: 176px; --step-rotate: -18deg; }
+.footprints i:nth-child(4) { left: 42px; top: 268px; --step-rotate: 18deg; }
+.footprints i:nth-child(5) { left: 88px; top: 362px; --step-rotate: -16deg; }
+.footprints i:nth-child(6) { left: 54px; top: 456px; --step-rotate: 18deg; }
 
 .eyebrow {
   margin: 0 0 12px;
@@ -1337,9 +1419,77 @@ h3 {
     repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 5px, transparent 5px 13px);
 }
 
+/* Third pass: a bold KOTOBA trail reduces empty white space like a game-site key shape. */
+.hero {
+  --season-ink: #e9ad7c;
+  background:
+    linear-gradient(105deg, rgba(255,248,236,.97) 0 39%, rgba(255,255,255,.76) 39% 100%),
+    radial-gradient(circle at 82% 18%, rgba(241,125,168,.18), transparent 28%),
+    url("assets/images/narita.png") center / cover;
+}
+
+.hero::after {
+  display: none;
+}
+
+.daily-section {
+  --season-ink: #e8bd80;
+  background:
+    radial-gradient(circle at 86% 18%, rgba(241,125,168,.18), transparent 26%),
+    linear-gradient(110deg, rgba(255,248,236,.94) 0 40%, rgba(255,255,255,.76) 40%),
+    linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,248,236,.92));
+}
+
+.story-section {
+  --season-ink: #82c7df;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(87,185,233,.28), transparent 28%),
+    linear-gradient(110deg, rgba(239,248,255,.94) 0 41%, rgba(255,255,255,.74) 41%),
+    linear-gradient(135deg, rgba(255,253,248,.94), rgba(239,248,255,.86));
+}
+
+.lessons-section {
+  --season-ink: #d8a060;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(242,139,56,.2), transparent 28%),
+    linear-gradient(110deg, rgba(255,243,221,.95) 0 42%, rgba(255,255,255,.74) 42%),
+    linear-gradient(135deg, rgba(255,248,236,.9), rgba(255,255,255,.84));
+}
+
+.characters-section {
+  --season-ink: #e99abb;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(241,125,168,.24), transparent 27%),
+    linear-gradient(110deg, rgba(255,240,246,.94) 0 40%, rgba(255,255,255,.75) 40%),
+    linear-gradient(135deg, rgba(255,253,248,.94), rgba(239,248,255,.86));
+}
+
+.audio-shop {
+  --season-ink: #b7d8f0;
+}
+
+.audio-shop .kotoba-column,
+.audio-shop .footprints {
+  opacity: .22;
+  mix-blend-mode: screen;
+}
+
 @media (max-width: 1180px) {
   .section-tabs { display: none; }
   .section-frame::before { width: 180px; opacity: .55; }
+  .kotoba-column {
+    right: 18px;
+    width: clamp(150px, 24vw, 260px);
+    opacity: .24;
+  }
+  .kotoba-column span {
+    height: clamp(58px, 8vw, 100px);
+    font-size: clamp(6rem, 14vw, 12rem);
+  }
+  .footprints {
+    right: clamp(120px, 24vw, 320px);
+    opacity: .7;
+  }
   .section-stamp { display: none; }
   .hero,
   .section-heading,
@@ -1402,6 +1552,10 @@ h3 {
   }
   .section-frame::before { width: 92px; }
   .section-frame::after { display: none; }
+  .kotoba-column,
+  .footprints {
+    display: none;
+  }
   .hero {
     min-height: auto;
     padding-bottom: 56px;
