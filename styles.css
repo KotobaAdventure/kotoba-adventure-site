@@ -1085,6 +1085,7 @@ h3 {
     align-items: center;
     justify-content: space-between;
     padding: 12px 20px;
+    overflow: visible;
   }
 
   .brand br, .side-note { display: none; }
