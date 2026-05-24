@@ -5,7 +5,6 @@ if (toggle && nav) {
   toggle.addEventListener("click", () => {
     const isOpen = !nav.classList.contains("is-open");
     nav.classList.toggle("is-open", isOpen);
-    nav.dataset.open = String(isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
   });
 }
@@ -13,10 +12,29 @@ if (toggle && nav) {
 nav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("is-open");
-    nav.dataset.open = "false";
     toggle?.setAttribute("aria-expanded", "false");
   });
 });
+
+const sectionLinks = document.querySelectorAll("[data-section-link]");
+const sections = document.querySelectorAll("[data-section]");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (!visible) return;
+
+    sectionLinks.forEach((link) => {
+      link.classList.toggle("is-active", link.dataset.sectionLink === visible.target.dataset.section);
+    });
+  },
+  { rootMargin: "-35% 0px -45% 0px", threshold: [0.15, 0.35, 0.6] }
+);
+
+sections.forEach((section) => sectionObserver.observe(section));
 
 const characterData = {
   luka: {
@@ -25,7 +43,7 @@ const characterData = {
     alt: "Luka full-body character art",
     role: "Energetic Beginner",
     name: "Luka",
-    quote: "“Wait... I can read that now? That is actually awesome.”",
+    quote: "Wait... I can read that now? That is actually awesome.",
     description:
       "A curious beginner who jumps into new places before he feels ready. Luka gives learners a familiar starting point: excited, imperfect, and brave enough to try.",
     facts: [
@@ -48,7 +66,7 @@ const characterData = {
     alt: "Philia full-body character art",
     role: "Soft Observer",
     name: "Philia",
-    quote: "“This character has such a gentle shape... I can almost hear it.”",
+    quote: "This character has such a gentle shape... I can almost hear it.",
     description:
       "A sensitive learner who notices atmosphere, sound, color, and feeling. Philia helps turn Japanese from symbols on a page into something learners can sense.",
     facts: [
@@ -71,7 +89,7 @@ const characterData = {
     alt: "Kotoha-sensei full-body character art",
     role: "Native Guide",
     name: "Kotoha-sensei",
-    quote: "“Words are travelers too. They carry history in very small shapes.”",
+    quote: "Words are travelers too. They carry history in very small shapes.",
     description:
       "A tiny white fox teacher with native Japanese insight and a warm margin-note voice. Kotoha-sensei keeps the journey clear, gentle, and culturally grounded.",
     facts: [
@@ -161,37 +179,37 @@ const dailySamples = [
     meaning: "to eat",
     japanese: "あさごはんを たべます。",
     english: "I eat breakfast.",
-    note: "In casual speech, you’ll often hear たべる. In polite speech, use たべます.",
+    note: "In casual speech, you'll often hear たべる. In polite speech, use たべます.",
     question: "What does たべる mean?",
     options: ["A. to eat", "B. to go", "C. to read"],
     answer: 0,
-    result: "Correct. たべる means “to eat.”",
+    result: "Correct. たべる means \"to eat.\"",
   },
   {
     label: "Useful Phrase",
-    word: "気をつけて",
+    word: "きをつけて",
     reading: "ki o tsukete",
     meaning: "take care / be careful",
-    japanese: "帰るとき、気をつけて。",
+    japanese: "かえるとき、きをつけて。",
     english: "Be careful on your way home.",
     note: "This phrase is warm and practical. You can use it when someone is leaving or traveling.",
-    question: "When would you use 気をつけて?",
+    question: "When would you use きをつけて?",
     options: ["A. When someone leaves", "B. When ordering food", "C. When counting money"],
     answer: 0,
-    result: "Correct. 気をつけて is often used when someone is leaving or traveling.",
+    result: "Correct. きをつけて is often used when someone is leaving or traveling.",
   },
   {
     label: "Culture Word",
-    word: "推し",
+    word: "おし",
     reading: "oshi",
     meaning: "favorite character / person you support",
-    japanese: "わたしの 推しは このキャラです。",
+    japanese: "わたしのおしは このキャラです。",
     english: "My favorite character is this one.",
-    note: "推し is common in anime, idol, game, and fandom spaces. It carries a feeling of support, not just liking.",
-    question: "What does 推し usually refer to?",
+    note: "おし is common in anime, idol, game, and fandom spaces. It carries a feeling of support, not just liking.",
+    question: "What does おし usually refer to?",
     options: ["A. A favorite character or person", "B. A train ticket", "C. A cold drink"],
     answer: 0,
-    result: "Correct. 推し is someone or something you strongly support as a fan.",
+    result: "Correct. おし is someone or something you strongly support as a fan.",
   },
 ];
 
