@@ -1567,10 +1567,8 @@ h3 {
 /* Fifth pass: remove seasonal panels and make the single section letters dominate like the ZZZ Z-shape. */
 .section-frame {
   background:
-    linear-gradient(90deg, rgba(21,52,95,.035) 1px, transparent 1px),
-    linear-gradient(rgba(21,52,95,.028) 1px, transparent 1px),
-    #f7f7f5;
-  background-size: 40px 40px, 40px 40px, auto;
+    #fff;
+  background-size: auto;
 }
 
 .section-frame::before,
@@ -1591,10 +1589,8 @@ h3 {
 .audio-shop,
 .adventure-section {
   background:
-    linear-gradient(90deg, rgba(21,52,95,.035) 1px, transparent 1px),
-    linear-gradient(rgba(21,52,95,.028) 1px, transparent 1px),
-    #f7f7f5;
-  background-size: 40px 40px, 40px 40px, auto;
+    #fff;
+  background-size: auto;
 }
 
 .audio-shop .section-heading h2,
@@ -1603,17 +1599,27 @@ h3 {
 }
 
 .section-letter {
-  top: clamp(0px, 2vw, 34px);
+  top: clamp(14px, 4vw, 60px);
   right: auto;
   left: auto;
   z-index: 0;
-  color: rgba(13,31,56,.13);
-  font-size: clamp(28rem, 72vw, 74rem);
+  color: transparent;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(222, 165, 112, .98) 0 18px,
+      rgba(222, 165, 112, .98) 18px 30px,
+      rgba(237, 190, 150, .98) 30px 43px,
+      rgba(237, 190, 150, .98) 43px 56px
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: clamp(18rem, 43vw, 48rem);
   font-weight: 900;
-  line-height: .62;
+  line-height: .56;
   letter-spacing: 0;
   opacity: 1;
-  transform: scaleX(1.36) skewX(-9deg);
+  transform: scaleX(1.42) skewX(-8deg);
   transform-origin: center;
   mix-blend-mode: multiply;
 }
@@ -1621,18 +1627,18 @@ h3 {
 .daily-section .section-letter,
 .lessons-section .section-letter,
 .audio-shop .section-letter {
-  left: clamp(-170px, -8vw, -70px);
+  left: clamp(-92px, -4vw, -34px);
 }
 
 .story-section .section-letter,
 .characters-section .section-letter,
 .adventure-section .section-letter {
-  right: clamp(-150px, -7vw, -60px);
+  right: clamp(-86px, -4vw, -30px);
 }
 
 .section-stamp {
-  top: clamp(100px, 12vw, 170px);
-  left: clamp(26px, 4vw, 76px);
+  top: clamp(76px, 9vw, 132px);
+  left: clamp(46px, 5vw, 92px);
   width: auto;
   min-height: 0;
   padding: 0;
@@ -1650,7 +1656,7 @@ h3 {
 }
 
 .section-stamp span {
-  display: block;
+  display: none;
   color: var(--navy-deep);
   font-size: clamp(1rem, 1.4vw, 1.35rem);
   font-weight: 900;
@@ -1660,19 +1666,42 @@ h3 {
 
 .section-stamp b {
   display: block;
-  margin-top: 8px;
-  color: var(--navy-deep);
-  font-size: clamp(6.5rem, 12vw, 13rem);
+  margin-top: 0;
+  color: #050505;
+  font-size: clamp(1.45rem, 2.3vw, 2.45rem);
   font-weight: 900;
-  line-height: .75;
+  line-height: 1;
+  transform: rotate(-8deg);
 }
 
 .story-section .section-stamp,
 .characters-section .section-stamp,
 .adventure-section .section-stamp {
   left: auto;
-  right: clamp(34px, 5vw, 92px);
+  right: clamp(64px, 7vw, 130px);
   text-align: right;
+}
+
+.story-section .section-stamp {
+  top: clamp(160px, 17vw, 260px);
+}
+
+.lessons-section .section-stamp {
+  top: clamp(230px, 24vw, 360px);
+  left: clamp(34px, 3vw, 64px);
+}
+
+.characters-section .section-stamp {
+  top: clamp(250px, 25vw, 380px);
+}
+
+.audio-shop .section-stamp {
+  top: clamp(150px, 17vw, 250px);
+  left: clamp(34px, 3vw, 64px);
+}
+
+.adventure-section .section-stamp {
+  top: clamp(300px, 30vw, 440px);
 }
 
 .daily-section .section-heading,
@@ -1683,7 +1712,7 @@ h3 {
 .dispatch-strip,
 .audio-shop .section-heading,
 .shop-grid {
-  margin-left: clamp(180px, 18vw, 320px);
+  margin-left: clamp(170px, 16vw, 300px);
 }
 
 .story-section .section-heading,
@@ -1692,7 +1721,7 @@ h3 {
 .character-console,
 .adventure-section .section-heading {
   margin-left: 0;
-  margin-right: clamp(180px, 18vw, 320px);
+  margin-right: clamp(170px, 16vw, 300px);
 }
 
 .section-heading {
@@ -1716,18 +1745,18 @@ h3 {
   .section-frame::before { width: 180px; opacity: .55; }
   .section-letter {
     top: 56px;
-    font-size: clamp(18rem, 48vw, 42rem);
+    font-size: clamp(16rem, 42vw, 34rem);
     opacity: 1;
   }
   .daily-section .section-letter,
   .lessons-section .section-letter,
   .audio-shop .section-letter {
-    left: -120px;
+    left: -72px;
   }
   .story-section .section-letter,
   .characters-section .section-letter,
   .adventure-section .section-letter {
-    right: -120px;
+    right: -72px;
   }
   .section-stamp {
     display: block;
@@ -1838,10 +1867,10 @@ h3 {
   .section-letter {
     display: block;
     top: 56px;
-    left: -56px !important;
+    left: -42px !important;
     right: auto !important;
-    font-size: clamp(12rem, 62vw, 20rem);
-    opacity: .11;
+    font-size: clamp(10rem, 58vw, 18rem);
+    opacity: .22;
   }
   .section-stamp {
     position: relative;
