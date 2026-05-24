@@ -943,6 +943,400 @@ h3 {
   font-weight: 900;
 }
 
+/* Second pass: keep the punchy game-site UI, but translate it into a travel notebook. */
+.top-bar {
+  background:
+    linear-gradient(90deg, rgba(13,31,56,.98), rgba(21,52,95,.94)),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 5px, transparent 5px 12px);
+}
+
+.top-bar nav a {
+  border: 1px solid transparent;
+}
+
+.top-bar nav a:hover {
+  border-color: rgba(201,151,61,.38);
+  box-shadow: inset 0 -3px 0 var(--gold);
+}
+
+.section-tabs {
+  right: 20px;
+  width: 88px;
+  padding: 12px 8px;
+  background: rgba(255,253,248,.94);
+  border: 2px solid var(--gold);
+  border-radius: 18px 18px 8px 8px;
+}
+
+.section-tabs::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: -18px;
+  height: 28px;
+  background: var(--gold);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.section-tabs a {
+  min-height: 64px;
+  color: var(--navy);
+  border: 1px solid rgba(21,52,95,.12);
+  border-radius: 12px;
+}
+
+.section-tabs a.is-active,
+.section-tabs a:hover {
+  color: white;
+  background: var(--navy);
+}
+
+.section-frame {
+  isolation: isolate;
+}
+
+.section-frame::before {
+  width: min(30vw, 390px);
+  background:
+    linear-gradient(135deg, rgba(201,151,61,.92), rgba(255,248,236,.82)),
+    repeating-linear-gradient(135deg, rgba(21,52,95,.12) 0 4px, transparent 4px 12px);
+  clip-path: polygon(0 0, 76% 0, 100% 100%, 0 100%);
+  opacity: .8;
+}
+
+.section-frame::after {
+  content: "";
+  position: absolute;
+  right: clamp(28px, 8vw, 130px);
+  top: clamp(82px, 12vw, 150px);
+  z-index: 0;
+  width: 176px;
+  height: 176px;
+  border: 3px solid rgba(201,151,61,.28);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 12px rgba(255,255,255,.24);
+  opacity: .85;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.section-heading {
+  padding: clamp(18px, 3vw, 28px);
+  background: rgba(255,253,248,.62);
+  border: 1px solid rgba(201,151,61,.22);
+  border-radius: 24px 24px 24px 8px;
+  backdrop-filter: blur(6px);
+}
+
+.section-heading .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  color: white;
+  background: var(--navy);
+  border-radius: 999px 999px 999px 8px;
+}
+
+.hero {
+  background:
+    linear-gradient(105deg, rgba(255,248,236,.98) 0 43%, rgba(255,255,255,.88) 43% 100%),
+    radial-gradient(circle at 78% 18%, rgba(87,185,233,.2), transparent 28%),
+    url("assets/images/narita.png") center / cover;
+}
+
+.hero::after {
+  content: "KOTOBA";
+  position: absolute;
+  right: clamp(16px, 4vw, 80px);
+  bottom: 112px;
+  z-index: 0;
+  color: rgba(21,52,95,.055);
+  font-size: clamp(4rem, 14vw, 14rem);
+  font-weight: 900;
+  line-height: .8;
+  pointer-events: none;
+}
+
+.hero-copy {
+  padding: clamp(22px, 4vw, 42px);
+  background:
+    linear-gradient(120deg, rgba(255,253,248,.92), rgba(255,248,236,.76)),
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(21,52,95,.07) 30px 31px);
+  border: 1px solid rgba(201,151,61,.28);
+  border-radius: 30px 30px 30px 10px;
+  box-shadow: var(--shadow);
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hero-badges span {
+  padding: 9px 13px;
+  color: var(--navy);
+  background: white;
+  border: 1px solid rgba(21,52,95,.14);
+  border-left: 5px solid var(--sakura);
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 900;
+}
+
+.hero-passport {
+  position: relative;
+}
+
+.hero-passport::before {
+  content: "";
+  position: absolute;
+  inset: -22px 28px 36px -18px;
+  z-index: -1;
+  background:
+    linear-gradient(135deg, rgba(21,52,95,.95), rgba(87,185,233,.7)),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.16) 0 6px, transparent 6px 14px);
+  border-radius: 28px;
+  transform: rotate(3deg);
+}
+
+.hero-passport img,
+.featured-card img,
+.lesson-grid img,
+.shop-grid img {
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.audio-dock {
+  display: grid;
+  grid-template-columns: 1fr repeat(5, 10px);
+  gap: 8px;
+  align-items: end;
+  justify-self: start;
+  min-width: min(340px, 92%);
+  padding: 16px 18px;
+  color: white;
+  background: rgba(13,31,56,.96);
+  border: 2px solid var(--gold);
+  border-radius: 16px 16px 16px 6px;
+  box-shadow: var(--shadow);
+  transform: rotate(-1deg);
+}
+
+.audio-dock span,
+.audio-dock b {
+  grid-column: 1 / 2;
+}
+
+.audio-dock span {
+  color: var(--gold);
+  font-size: .74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.audio-dock b {
+  margin-top: -4px;
+}
+
+.audio-dock i {
+  display: block;
+  width: 10px;
+  height: 18px;
+  background: var(--sky);
+  border-radius: 999px;
+}
+
+.audio-dock i:nth-of-type(2) { height: 28px; background: var(--sakura); }
+.audio-dock i:nth-of-type(3) { height: 38px; background: var(--gold); }
+.audio-dock i:nth-of-type(4) { height: 24px; background: var(--matcha); }
+.audio-dock i:nth-of-type(5) { height: 32px; background: var(--sky); }
+
+.section-stamp {
+  background:
+    linear-gradient(135deg, var(--gold), #ffe3a3),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.22) 0 5px, transparent 5px 13px);
+  border: 2px solid rgba(21,52,95,.14);
+  border-radius: 0 54px 54px 0;
+}
+
+.ticket-row a {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 0 50%, transparent 0 12px, rgba(255,255,255,.95) 13px),
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,248,236,.92));
+}
+
+.ticket-row a::after {
+  content: "";
+  position: absolute;
+  inset: 12px auto 12px 58px;
+  border-left: 2px dashed rgba(21,52,95,.18);
+}
+
+.ticket-row span {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  background: var(--navy);
+  border-radius: 50%;
+}
+
+.word-terminal,
+.quiz-terminal,
+.featured-card,
+.lesson-grid article,
+.shop-grid article,
+.character-info {
+  border-color: rgba(201,151,61,.32);
+  box-shadow: 0 18px 46px rgba(31,37,48,.13);
+}
+
+.word-terminal,
+.quiz-terminal {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,248,236,.92)),
+    repeating-linear-gradient(0deg, transparent 0 32px, rgba(21,52,95,.06) 32px 33px);
+}
+
+.terminal-top {
+  background:
+    linear-gradient(90deg, var(--navy), var(--navy-deep));
+  border-bottom: 4px solid var(--gold);
+}
+
+.example-strip,
+.kotoha-note {
+  background:
+    linear-gradient(135deg, rgba(255,248,236,.96), rgba(255,255,255,.86));
+}
+
+.kotoha-note {
+  border-left-color: var(--sakura);
+}
+
+.media-board,
+.lesson-grid,
+.shop-grid {
+  position: relative;
+}
+
+.featured-card,
+.lesson-grid article,
+.shop-grid article {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.featured-card:hover,
+.lesson-grid article:hover,
+.shop-grid article:hover,
+.ticket-row a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 58px rgba(31,37,48,.18);
+}
+
+.log-cards article {
+  position: relative;
+  overflow: hidden;
+  border-left: 8px solid var(--gold);
+}
+
+.log-cards article::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  bottom: -24px;
+  width: 86px;
+  height: 86px;
+  border: 2px solid rgba(201,151,61,.28);
+  border-radius: 50%;
+}
+
+.lesson-feature {
+  background:
+    linear-gradient(135deg, white, var(--paper));
+}
+
+.lesson-feature p {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.dispatch-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 0 clamp(0px, 12vw, 180px);
+}
+
+.dispatch-strip article {
+  min-height: 92px;
+  padding: 16px 18px;
+  color: var(--navy-deep);
+  background: rgba(255,253,248,.9);
+  border: 1px solid rgba(201,151,61,.28);
+  border-left: 7px solid var(--sky);
+  border-radius: 16px 16px 16px 6px;
+  box-shadow: 0 10px 24px rgba(31,37,48,.08);
+}
+
+.dispatch-strip span {
+  color: var(--gold);
+  font-size: .78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.dispatch-strip b {
+  display: block;
+  margin-top: 8px;
+}
+
+.character-console {
+  padding: 18px;
+  background:
+    linear-gradient(135deg, rgba(255,253,248,.66), rgba(239,248,255,.58));
+  border: 1px solid rgba(201,151,61,.2);
+  border-radius: 34px;
+}
+
+.character-art {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255,255,255,.98), transparent 35%),
+    linear-gradient(150deg, color-mix(in srgb, currentColor 22%, white), rgba(255,248,236,.82)),
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(21,52,95,.06) 34px 35px);
+}
+
+.character-info {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,248,236,.9));
+}
+
+.compass-panel {
+  background:
+    linear-gradient(135deg, var(--navy), var(--navy-deep));
+  border: 2px solid rgba(201,151,61,.38);
+}
+
+.character-tab {
+  background:
+    linear-gradient(135deg, rgba(21,52,95,.96), rgba(13,31,56,.92));
+  border-color: rgba(201,151,61,.28);
+  border-radius: 18px 18px 18px 6px;
+}
+
+.audio-shop {
+  background:
+    linear-gradient(135deg, rgba(21,52,95,.98), rgba(13,31,56,.96)),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 5px, transparent 5px 13px);
+}
+
 @media (max-width: 1180px) {
   .section-tabs { display: none; }
   .section-frame::before { width: 180px; opacity: .55; }
@@ -960,6 +1354,10 @@ h3 {
   .hero-copy { margin-left: 0; }
   .ticket-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lesson-feature { grid-template-columns: 1fr; }
+  .dispatch-strip {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
   .character-console { min-height: 0; }
   .character-tabs {
     grid-template-columns: repeat(3, 1fr);
@@ -1003,9 +1401,21 @@ h3 {
     padding: 58px 18px;
   }
   .section-frame::before { width: 92px; }
+  .section-frame::after { display: none; }
   .hero {
     min-height: auto;
     padding-bottom: 56px;
+  }
+  .hero::after { display: none; }
+  .hero-copy {
+    padding: 22px;
+  }
+  .hero-badges span {
+    width: 100%;
+  }
+  .audio-dock {
+    grid-template-columns: 1fr repeat(5, 8px);
+    min-width: 100%;
   }
   h1 { font-size: clamp(3.2rem, 17vw, 5rem); }
   h2 { font-size: clamp(2rem, 11vw, 3.3rem); }
