@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kotobaadventure.github.io/kotoba-adventure-site/sitemap.xml
