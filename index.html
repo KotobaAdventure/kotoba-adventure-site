@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kotoba Adventure is a story-based Japanese learning series with illustrated characters, printable PDFs, and native Japanese audio.">
+    <title>Kotoba Adventure | Story-Based Japanese Learning</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="side-nav">
+      <a class="brand" href="#top" aria-label="Kotoba Adventure home">
+        <img class="brand-logo" src="assets/logos/sns-icon.png" alt="">
+        <span>Kotoba<br>Adventure</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#news">News</a>
+        <a href="#daily">Daily</a>
+        <a href="#story">Story</a>
+        <a href="#contents">Lessons</a>
+        <a href="#characters">Cast</a>
+        <a href="#audio">Audio</a>
+        <a href="#shop">Shop</a>
+      </nav>
+      <div class="side-note">
+        <span>Official Hub</span>
+        <b>PDF / Audio / Free Samples</b>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Illustrated Japanese Learning Series</p>
+          <h1><span>Kotoba</span><span>Adventure</span></h1>
+          <p>Learn Japanese through story episodes, charming characters, printable practice pages, and real native voice.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contents">Start Learning</a>
+            <a class="button pale" href="#characters">Meet the Cast</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Kotoba Adventure main cast">
+          <img class="hero-bg-img" src="assets/images/narita.png" alt="">
+        </div>
+        <div class="quick-banners">
+          <a class="quick-card sakura" href="#news">
+            <span>Latest</span>
+            <strong>Launch updates and free sample news</strong>
+          </a>
+          <a class="quick-card gold" href="#shop">
+            <span>Shop</span>
+            <strong>Printable PDF and native audio editions</strong>
+          </a>
+        </div>
+      </section>
+
+      <section class="daily-section" id="daily">
+        <div class="section-ribbon gold"><span>Daily Kotoba</span><small>Mini Japanese Lesson</small></div>
+        <div class="daily-switcher" aria-label="Daily Kotoba samples">
+          <button class="is-active" type="button" data-daily-index="0">01 N5 Word</button>
+          <button type="button" data-daily-index="1">02 Useful Phrase</button>
+          <button type="button" data-daily-index="2">03 Culture Word</button>
+        </div>
+        <div class="daily-layout">
+          <div class="daily-card">
+            <div class="daily-header">
+              <div>
+                <p class="daily-label">Today’s Kotoba</p>
+                <h2 class="daily-word">たべる</h2>
+                <p class="daily-reading">taberu</p>
+              </div>
+              <span class="daily-level">N5 Word</span>
+            </div>
+            <p class="daily-meaning">to eat</p>
+            <div class="daily-example">
+              <b>Example</b>
+              <p class="daily-japanese">あさごはんを たべます。</p>
+              <p class="daily-english">I eat breakfast.</p>
+            </div>
+            <div class="kotoha-note">
+              <b>Kotoha’s Note</b>
+              <p>In casual speech, you’ll often hear たべる. In polite speech, use たべます.</p>
+            </div>
+          </div>
+
+          <div class="quiz-card">
+            <p class="daily-label">Quick Quiz</p>
+            <h3 class="quiz-question">What does たべる mean?</h3>
+            <div class="quiz-options" role="group" aria-label="Daily Kotoba quiz options">
+              <button type="button" data-correct="true">A. to eat</button>
+              <button type="button">B. to go</button>
+              <button type="button">C. to read</button>
+            </div>
+            <p class="quiz-result" aria-live="polite">Choose an answer to check your understanding.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="portal-grid" id="news">
+        <div class="news-panel">
+          <div class="section-ribbon sakura"><span>News</span><small>Latest Updates</small></div>
+          <div class="news-list">
+            <article>
+              <b>Course</b>
+              <time>2026.05</time>
+              <p>Hiragana Complete Story Workbook is being prepared as the first major course.</p>
+            </article>
+            <article>
+              <b>Audio</b>
+              <time>2026.05</time>
+              <p>Native Japanese story readings and core vocabulary audio are in production.</p>
+            </article>
+            <article>
+              <b>Sample</b>
+              <time>Coming Soon</time>
+              <p>A free first lesson sample will be added before the full course launch.</p>
+            </article>
+          </div>
+          <a class="more-link" href="#shop">View shop plan</a>
+        </div>
+
+        <div class="portal-column">
+          <a class="feature-banner story" id="story" href="#story-copy">
+            <img src="assets/images/tea-shop.png" alt="Tea shop story scene">
+            <span>Story World</span>
+            <strong>A Japanese journey told through scenes, sounds, and small discoveries.</strong>
+          </a>
+          <a class="feature-banner lesson" href="#contents">
+            <img src="assets/products/story-preview.png" alt="Lesson page preview">
+            <span>Lesson Contents</span>
+            <strong>Story, vocabulary, culture notes, practice, and answers.</strong>
+          </a>
+        </div>
+      </section>
+
+      <section class="story-section" id="story-copy">
+        <div class="section-ribbon matcha"><span>Story</span><small>Learning Media IP</small></div>
+        <div class="story-layout">
+          <div>
+            <h2>Japanese starts feeling readable when the world around it makes sense.</h2>
+            <p>Kotoba Adventure follows Luka and Philia as they explore Japan with Kotoha-sensei. Each lesson introduces sounds and words through a scene first, then turns that moment into focused study.</p>
+          </div>
+          <div class="story-points">
+            <div><b>01</b><span>Readable story episodes</span></div>
+            <div><b>02</b><span>Native Japanese notes</span></div>
+            <div><b>03</b><span>Printable practice pages</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contents-section" id="contents">
+        <div class="section-ribbon sky"><span>Lessons</span><small>Current Course</small></div>
+        <div class="course-box">
+          <div class="course-copy">
+            <p class="kicker dark">223 pages / 12 lessons / printable PDF</p>
+            <h2>Hiragana Complete Story Workbook</h2>
+            <p>A complete illustrated hiragana course covering the first sounds, dakuten, handakuten, and small-letter combinations through one continuous story.</p>
+            <ul>
+              <li>English story episodes</li>
+              <li>Hiragana-only Japanese story versions</li>
+              <li>Vocabulary and cultural notes</li>
+              <li>Practice pages with answers</li>
+            </ul>
+          </div>
+          <div class="course-images">
+            <img src="assets/products/hiragana-complete-audio.png" alt="Hiragana Complete with audio product preview">
+            <img src="assets/products/page-preview.png" alt="Page preview from the workbook">
+          </div>
+        </div>
+      </section>
+
+      <section class="characters-section" id="characters">
+        <div class="section-ribbon violet"><span>Cast</span><small>Main Characters</small></div>
+        <div class="character-console" data-active-character="luka">
+          <div class="character-tabs" aria-label="Select a character">
+            <button class="character-tab is-active" type="button" data-character="luka">
+              <img src="assets/characters/luka-full.png" alt="">
+              <span>Luka</span>
+            </button>
+            <button class="character-tab" type="button" data-character="philia">
+              <img src="assets/characters/philia-full.png" alt="">
+              <span>Philia</span>
+            </button>
+            <button class="character-tab" type="button" data-character="kotoha">
+              <img src="assets/characters/kotoha-full.png" alt="">
+              <span>Kotoha</span>
+            </button>
+          </div>
+
+          <div class="character-profile-panel">
+            <div class="profile-art">
+              <img class="profile-image" src="assets/characters/luka-full.png" alt="Luka full-body character art">
+            </div>
+            <div class="profile-info">
+              <p class="profile-role">Energetic Beginner</p>
+              <h3 class="profile-name">Luka</h3>
+              <blockquote class="profile-quote">“Wait... I can read that now? That is actually awesome.”</blockquote>
+              <p class="profile-description">A curious beginner who jumps into new places before he feels ready. Luka gives learners a familiar starting point: excited, imperfect, and brave enough to try.</p>
+
+              <dl class="profile-facts">
+                <div><dt>Role</dt><dd>The Adventurer</dd></div>
+                <div><dt>Height</dt><dd>178 cm</dd></div>
+                <div><dt>Likes</dt><dd>Travel, ramen, anime culture, useful slang</dd></div>
+                <div><dt>Not a fan of</dt><dd>Dry memorization and standing still too long</dd></div>
+              </dl>
+
+              <div class="compass-card">
+                <div>
+                  <p class="compass-title">Learning Compass</p>
+                  <ul class="compass-values">
+                    <li><span>Curiosity</span><b>5</b></li>
+                    <li><span>Speaking Courage</span><b>5</b></li>
+                    <li><span>Action</span><b>5</b></li>
+                    <li><span>Mistake Recovery</span><b>4</b></li>
+                    <li><span>Japanese Level</span><b>1</b></li>
+                  </ul>
+                </div>
+                <svg class="radar-chart" viewBox="0 0 220 220" role="img" aria-label="Luka learning compass chart">
+                  <polygon class="radar-grid" points="110,18 197.5,81.4 164.1,183.6 55.9,183.6 22.5,81.4"></polygon>
+                  <polygon class="radar-grid inner" points="110,55 162.5,93 142.5,154.2 77.5,154.2 57.5,93"></polygon>
+                  <polygon class="radar-fill" points="110,18 197.5,81.4 164.1,183.6 66.8,169.2 92.5,68.7"></polygon>
+                  <circle cx="110" cy="18" r="4"></circle>
+                  <circle cx="197.5" cy="81.4" r="4"></circle>
+                  <circle cx="164.1" cy="183.6" r="4"></circle>
+                  <circle cx="55.9" cy="183.6" r="4"></circle>
+                  <circle cx="22.5" cy="81.4" r="4"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audio-section" id="audio">
+        <div class="audio-art">
+          <img src="assets/characters/kotoha-full.png" alt="Kotoha-sensei with scroll">
+        </div>
+        <div class="audio-copy">
+          <div class="section-ribbon gold small"><span>Audio</span><small>Native Voice</small></div>
+          <h2>Real Japanese voice, recorded for learners.</h2>
+          <p>The audio edition focuses on story reading, lesson sounds, and core vocabulary. It is designed to support reading without replacing the warmth of a real voice.</p>
+          <div class="audio-tags">
+            <span>Story reading</span>
+            <span>Kana sounds</span>
+            <span>Core vocabulary</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-section" id="shop">
+        <div class="section-ribbon orange"><span>Shop</span><small>Digital Products</small></div>
+        <div class="shop-grid">
+          <article>
+            <img src="assets/products/hiragana-complete-audio.png" alt="PDF and native audio edition">
+            <div>
+              <b>PDF + Native Audio</b>
+              <p>Printable workbook plus MP3 files for story reading, sounds, and core vocabulary.</p>
+              <a href="#">Coming soon</a>
+            </div>
+          </article>
+          <article>
+            <img src="assets/products/hiragana-complete-pdf.png" alt="PDF only edition">
+            <div>
+              <b>Printable PDF</b>
+              <p>The full illustrated story workbook for learners who want the PDF edition only.</p>
+              <a href="#">Coming soon</a>
+            </div>
+          </article>
+          <article>
+            <img src="assets/images/narita.png" alt="Free sample preview">
+            <div>
+              <b>Free Sample</b>
+              <p>The first lesson will be available as a free starting point for new learners.</p>
+              <a href="#">Coming soon</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© Kotoba Adventure</span>
+      <span>Story-based Japanese learning PDFs</span>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
