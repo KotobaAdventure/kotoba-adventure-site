@@ -1599,7 +1599,7 @@ h3 {
 }
 
 .section-letter {
-  top: clamp(14px, 4vw, 60px);
+  top: 50%;
   right: auto;
   left: auto;
   z-index: 0;
@@ -1607,19 +1607,19 @@ h3 {
   background:
     repeating-linear-gradient(
       135deg,
-      rgba(222, 165, 112, .98) 0 18px,
-      rgba(222, 165, 112, .98) 18px 30px,
-      rgba(237, 190, 150, .98) 30px 43px,
-      rgba(237, 190, 150, .98) 43px 56px
+      rgba(222, 165, 112, .98) 0 6px,
+      rgba(222, 165, 112, .98) 6px 10px,
+      rgba(237, 190, 150, .98) 10px 14px,
+      rgba(237, 190, 150, .98) 14px 19px
     );
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: clamp(18rem, 43vw, 48rem);
+  font-size: clamp(34rem, 82vh, 76rem);
   font-weight: 900;
   line-height: .56;
   letter-spacing: 0;
   opacity: 1;
-  transform: scaleX(1.42) skewX(-8deg);
+  transform: translateY(-50%) scaleX(1.55) skewX(-8deg);
   transform-origin: center;
   mix-blend-mode: multiply;
 }
@@ -1627,13 +1627,13 @@ h3 {
 .daily-section .section-letter,
 .lessons-section .section-letter,
 .audio-shop .section-letter {
-  left: clamp(-92px, -4vw, -34px);
+  left: clamp(-330px, -18vw, -190px);
 }
 
 .story-section .section-letter,
 .characters-section .section-letter,
 .adventure-section .section-letter {
-  right: clamp(-86px, -4vw, -30px);
+  right: clamp(-310px, -17vw, -180px);
 }
 
 .section-stamp {
@@ -1737,6 +1737,8 @@ h3 {
 .character-art,
 .character-console,
 .dispatch-strip article {
+  position: relative;
+  z-index: 2;
   background-color: rgba(255,255,255,.9);
 }
 
@@ -1744,19 +1746,19 @@ h3 {
   .section-tabs { display: none; }
   .section-frame::before { width: 180px; opacity: .55; }
   .section-letter {
-    top: 56px;
-    font-size: clamp(16rem, 42vw, 34rem);
+    top: 50%;
+    font-size: clamp(26rem, 70vh, 56rem);
     opacity: 1;
   }
   .daily-section .section-letter,
   .lessons-section .section-letter,
   .audio-shop .section-letter {
-    left: -72px;
+    left: -220px;
   }
   .story-section .section-letter,
   .characters-section .section-letter,
   .adventure-section .section-letter {
-    right: -72px;
+    right: -220px;
   }
   .section-stamp {
     display: block;
@@ -1866,10 +1868,10 @@ h3 {
   }
   .section-letter {
     display: block;
-    top: 56px;
+    top: 50%;
     left: -42px !important;
     right: auto !important;
-    font-size: clamp(10rem, 58vw, 18rem);
+    font-size: clamp(18rem, 62vh, 32rem);
     opacity: .22;
   }
   .section-stamp {
