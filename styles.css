@@ -1062,7 +1062,7 @@ h3 {
 }
 
 .section-tabs a {
-  min-height: 64px;
+  min-height: 56px;
   color: var(--navy);
   border: 1px solid rgba(21,52,95,.12);
   border-radius: 12px;
@@ -1474,9 +1474,120 @@ h3 {
   mix-blend-mode: screen;
 }
 
+/* Fourth pass: each section gets one huge KOTOBA letter, ZZZ-style in the white field. */
+.kotoba-column,
+.footprints {
+  display: none;
+}
+
+.hero-mark {
+  position: absolute;
+  right: clamp(24px, 9vw, 150px);
+  bottom: clamp(70px, 10vw, 150px);
+  z-index: 0;
+  color: rgba(21,52,95,.055);
+  font-size: clamp(8rem, 22vw, 25rem);
+  font-weight: 900;
+  line-height: .75;
+  letter-spacing: 0;
+  transform: skewX(-8deg);
+  pointer-events: none;
+}
+
+.section-letter {
+  position: absolute;
+  right: clamp(-12px, 5vw, 90px);
+  top: clamp(40px, 7vw, 96px);
+  z-index: 0;
+  color: color-mix(in srgb, var(--season-ink, var(--gold)) 48%, white);
+  font-size: clamp(18rem, 43vw, 48rem);
+  font-weight: 900;
+  line-height: .72;
+  opacity: .42;
+  transform: skewX(-8deg);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.section-stamp {
+  left: 0;
+  top: clamp(112px, 13vw, 178px);
+  width: clamp(180px, 19vw, 300px);
+  min-height: clamp(150px, 16vw, 220px);
+  padding: 24px 28px;
+  color: var(--navy-deep);
+  background:
+    linear-gradient(135deg, #efc26b, #ffe0a1),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.22) 0 5px, transparent 5px 13px);
+  border: 1px solid rgba(21,52,95,.13);
+  border-radius: 0 52px 52px 0;
+  box-shadow: 0 18px 36px rgba(31,37,48,.14);
+  transform: skewX(-8deg);
+}
+
+.section-stamp span {
+  align-self: start;
+  color: var(--navy-deep);
+  font-size: clamp(.82rem, 1.2vw, 1rem);
+  line-height: 1.05;
+}
+
+.section-stamp b {
+  align-self: end;
+  color: var(--navy-deep);
+  font-size: clamp(4.7rem, 9vw, 9rem);
+  line-height: .75;
+}
+
+.daily-section .section-heading,
+.daily-layout,
+.daily-switcher,
+.story-section .section-heading,
+.media-board,
+.lessons-section .section-heading,
+.lesson-grid,
+.dispatch-strip,
+.characters-section .section-heading,
+.character-console,
+.audio-shop .section-heading,
+.shop-grid,
+.adventure-section .section-heading {
+  margin-left: clamp(120px, 15vw, 230px);
+}
+
+.adventure-section {
+  --season-ink: #91b8d8;
+  min-height: 520px;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(183,216,240,.28), transparent 30%),
+    linear-gradient(110deg, rgba(241,248,255,.94) 0 40%, rgba(255,255,255,.75) 40%),
+    linear-gradient(135deg, rgba(255,253,248,.94), rgba(239,248,255,.86));
+}
+
 @media (max-width: 1180px) {
   .section-tabs { display: none; }
   .section-frame::before { width: 180px; opacity: .55; }
+  .section-letter {
+    right: -18px;
+    top: 80px;
+    font-size: clamp(12rem, 34vw, 28rem);
+    opacity: .22;
+  }
+  .daily-section .section-heading,
+  .daily-layout,
+  .daily-switcher,
+  .story-section .section-heading,
+  .media-board,
+  .lessons-section .section-heading,
+  .lesson-grid,
+  .dispatch-strip,
+  .characters-section .section-heading,
+  .character-console,
+  .audio-shop .section-heading,
+  .shop-grid,
+  .adventure-section .section-heading {
+    margin-left: 0;
+  }
   .kotoba-column {
     right: 18px;
     width: clamp(150px, 24vw, 260px);
@@ -1553,7 +1664,9 @@ h3 {
   .section-frame::before { width: 92px; }
   .section-frame::after { display: none; }
   .kotoba-column,
-  .footprints {
+  .footprints,
+  .section-letter,
+  .hero-mark {
     display: none;
   }
   .hero {
