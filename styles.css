@@ -1032,12 +1032,38 @@ h3 {
   transition: filter .18s ease, transform .18s ease;
 }
 
-.social-links a img {
+.social-links a img,
+.social-links a svg {
   width: 100%;
   height: 100%;
-  object-fit: contain;
   filter: saturate(.9) brightness(.8);
   transition: filter .18s ease;
+}
+
+.social-links a svg {
+  fill: var(--cream);
+  stroke: var(--gold);
+}
+
+.social-links a svg circle:first-child {
+  fill: #071426;
+  stroke: var(--gold);
+  stroke-width: 3;
+}
+
+.social-links a svg rect,
+.social-links a svg circle:not(:first-child),
+.social-links a svg path {
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-links a[aria-label*="YouTube"] svg path {
+  fill: var(--cream);
+  stroke: none;
 }
 
 .social-links a span {
@@ -1055,7 +1081,9 @@ h3 {
 }
 
 .social-links a.is-active img,
-.social-links a:hover img {
+.social-links a:hover img,
+.social-links a.is-active svg,
+.social-links a:hover svg {
   filter: saturate(1.1) brightness(1.05) drop-shadow(0 8px 16px rgba(214,164,65,.25));
 }
 
