@@ -1009,6 +1009,38 @@ h3 {
   background: #071426;
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 28px);
+  width: min(860px, 100%);
+  padding: 0 0 20px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  color: rgba(255,255,255,.52);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 50%;
+  font-size: .9rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: color .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.social-links a.is-active,
+.social-links a:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
 .site-footer img {
   width: min(280px, 80vw);
   max-height: 86px;
