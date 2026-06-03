@@ -1598,6 +1598,48 @@ h3 {
   color: var(--navy-deep);
 }
 
+.about-section {
+  min-height: 620px;
+  background: #fff;
+}
+
+.about-panel {
+  display: grid;
+  grid-template-columns: minmax(320px, .78fr) minmax(420px, 1fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: start;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 58px);
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(201,151,61,.28);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.about-title h2 {
+  max-width: 640px;
+}
+
+.about-copy {
+  display: grid;
+  gap: 16px;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  font-weight: 800;
+}
+
+.about-copy p {
+  margin: 0;
+}
+
+.about-copy p:first-child {
+  color: var(--navy-deep);
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  font-weight: 900;
+  line-height: 1.45;
+}
+
 .section-letter {
   top: 50%;
   right: auto;
@@ -1801,6 +1843,7 @@ h3 {
   }
   .section-stamp { display: none; }
   .hero,
+  .about-panel,
   .section-heading,
   .daily-layout,
   .media-board,
